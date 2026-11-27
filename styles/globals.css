@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #faf9f6;
+  --surface: #ffffff;
+  --surface-soft: #f3f0e8;
+  --surface-alt: #eae5d9;
+  --text: #0f172a;
+  --text-inverse: #ffffff;
+  --muted: #526075;
+  --brand: #0052b4;
+  --brand-light: #e6f0fa;
+  --accent: #f2b705;
+  --accent-light: #fef7d6;
+  --danger: #c53030;
+  --border: rgba(15, 23, 42, 0.09);
+  --shadow-soft: 0 16px 40px -12px rgba(15, 23, 42, 0.07);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0a0f1a;
+  --surface: #111827;
+  --surface-soft: #162032;
+  --surface-alt: #1e293b;
+  --text: #f8fafc;
+  --text-inverse: #0f172a;
+  --muted: #94a3b8;
+  --brand: #3b82f6;
+  --brand-light: #1e3a8a;
+  --accent: #fbbf24;
+  --accent-light: #78350f;
+  --danger: #ef4444;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow-soft: 0 20px 50px -12px rgba(0, 0, 0, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-surface-soft {
+  background-color: var(--surface-soft);
+}
+
+.bg-surface-alt {
+  background-color: var(--surface-alt);
+}
+
+.text-brand {
+  color: var(--brand);
+}
+
+.bg-brand {
+  background-color: var(--brand);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.border-color {
+  border-color: var(--border);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Accessible keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Partner marquee */
+.animate-partner-slider {
+  display: flex;
+  width: max-content;
+  animation: slide 38s linear infinite;
+}
+
+.animate-partner-slider:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-partner-slider {
+    animation: none;
+  }
+}
